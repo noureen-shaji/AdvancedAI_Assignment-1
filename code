@@ -3,8 +3,129 @@
 
 
 
+10.define the candidate models
 
+candidate_models = {
+    "Dummy": [
+        (
+            "most_frequent",
+            DummyClassifier(
+                strategy="most_frequent"
+            )
+        )
+    ],
 
+    "Logistic Regression": [
+        (
+            "C=0.1",
+            LogisticRegression(
+                C=0.1,
+                max_iter=2000
+            )
+        ),
+        (
+            "C=1",
+            LogisticRegression(
+                C=1.0,
+                max_iter=2000
+            )
+        ),
+        (
+            "C=10",
+            LogisticRegression(
+                C=10.0,
+                max_iter=2000
+            )
+        )
+    ],
+
+    "Decision Tree": [
+        (
+            "depth=5",
+            DecisionTreeClassifier(
+                max_depth=5,
+                min_samples_leaf=5,
+                random_state=RANDOM_SEED
+            )
+        ),
+        (
+            "depth=10",
+            DecisionTreeClassifier(
+                max_depth=10,
+                min_samples_leaf=5,
+                random_state=RANDOM_SEED
+            )
+        ),
+        (
+            "depth=None",
+            DecisionTreeClassifier(
+                max_depth=None,
+                min_samples_leaf=5,
+                random_state=RANDOM_SEED
+            )
+        )
+    ],
+
+    "Random Forest": [
+        (
+            "trees=100",
+            RandomForestClassifier(
+                n_estimators=100,
+                min_samples_leaf=2,
+                random_state=RANDOM_SEED,
+                n_jobs=-1
+            )
+        ),
+        (
+            "trees=300",
+            RandomForestClassifier(
+                n_estimators=300,
+                min_samples_leaf=2,
+                random_state=RANDOM_SEED,
+                n_jobs=-1
+            )
+        ),
+        (
+            "trees=500",
+            RandomForestClassifier(
+                n_estimators=500,
+                min_samples_leaf=2,
+                random_state=RANDOM_SEED,
+                n_jobs=-1
+            )
+        )
+    ],
+
+    "Gradient Boosting": [
+        (
+            "estimators=100",
+            GradientBoostingClassifier(
+                n_estimators=100,
+                learning_rate=0.05,
+                max_depth=3,
+                random_state=RANDOM_SEED
+            )
+        ),
+        (
+            "estimators=300",
+            GradientBoostingClassifier(
+                n_estimators=300,
+                learning_rate=0.05,
+                max_depth=3,
+                random_state=RANDOM_SEED
+            )
+        ),
+        (
+            "estimators=500",
+            GradientBoostingClassifier(
+                n_estimators=500,
+                learning_rate=0.05,
+                max_depth=3,
+                random_state=RANDOM_SEED
+            )
+        )
+    ]
+}
 
 11.	choose settings using validation Macro-F1
 validation_results = []
@@ -111,6 +232,42 @@ display(selected_settings_df)
 
 
 
+
+
+
+
+15.run the final full-feature test
+full_results_df, full_trained_models = evaluate_condition(
+    condition_name="Full Features",
+    X_development_condition=X_development,
+    X_test_condition=X_test,
+    frozen_models=FROZEN_MODELS,
+    output_folder="models_full"
+)
+
+display(
+    full_results_df.round(4)
+)
+
+full_results_df.to_csv(
+    "full_results_all_metrics.csv",
+    index=False
+)
+
+16.remove Height and Weight
+X_development_no_hw = X_development.drop(
+    columns=["Height", "Weight"]
+)
+
+X_test_no_hw = X_test.drop(
+    columns=["Height", "Weight"]
+)
+
+print("Full development:", X_development.shape)
+print("Without H/W development:", X_development_no_hw.shape)
+
+print("Full test:", X_test.shape)
+print("Without H/W test:", X_test_no_hw.shape)
 
 17.	run the ablation
 ablation_results_df, ablation_trained_models = evaluate_condition(
