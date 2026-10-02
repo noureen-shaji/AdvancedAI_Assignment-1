@@ -696,6 +696,124 @@ ablation_results_df.to_csv(
     index=False
 )
 
+18.	compare full and ablation results
+metric_columns = [
+    "Macro-F1",
+    "Accuracy",
+    "Precision (macro)",
+    "Recall (macro)",
+    "AUC (macro OvR)",
+    
+]
+
+full_compare = full_results_df[
+    ["Model"] + metric_columns
+].copy()
+
+full_compare = full_compare.rename(
+    columns={
+        metric: f"Full {metric}"
+        for metric in metric_columns
+    }
+)
+
+ablation_compare = ablation_results_df[
+    ["Model"] + metric_columns
+].copy()
+
+ablation_compare = ablation_compare.rename(
+    columns={
+        metric: f"No H/W {metric}"
+        for metric in metric_columns
+    }
+)
+
+comparison_df = full_compare.merge(
+    ablation_compare,
+    on="Model"
+)
+
+for metric in metric_columns:
+    comparison_df[
+        f"Delta {metric}"
+    ] = (
+        comparison_df[f"No H/W {metric}"]
+        - comparison_df[f"Full {metric}"]
+    )
+
+comparison_df = comparison_df.sort_values(
+    "Full Macro-F1",
+    ascending=False
+).reset_index(drop=True)
+
+display(
+    comparison_df.round(4)
+)
+
+comparison_df.to_csv(
+    "comparison_all_metrics.csv",
+    index=False
+)
+18.	compare full and ablation results
+metric_columns = [
+    "Macro-F1",
+    "Accuracy",
+    "Precision (macro)",
+    "Recall (macro)",
+    "AUC (macro OvR)",
+    
+]
+
+full_compare = full_results_df[
+    ["Model"] + metric_columns
+].copy()
+
+full_compare = full_compare.rename(
+    columns={
+        metric: f"Full {metric}"
+        for metric in metric_columns
+    }
+)
+
+ablation_compare = ablation_results_df[
+    ["Model"] + metric_columns
+].copy()
+
+ablation_compare = ablation_compare.rename(
+    columns={
+        metric: f"No H/W {metric}"
+        for metric in metric_columns
+    }
+)
+
+comparison_df = full_compare.merge(
+    ablation_compare,
+    on="Model"
+)
+
+for metric in metric_columns:
+    comparison_df[
+        f"Delta {metric}"
+    ] = (
+        comparison_df[f"No H/W {metric}"]
+        - comparison_df[f"Full {metric}"]
+    )
+
+comparison_df = comparison_df.sort_values(
+    "Full Macro-F1",
+    ascending=False
+).reset_index(drop=True)
+
+display(
+    comparison_df.round(4)
+)
+
+comparison_df.to_csv(
+    "comparison_all_metrics.csv",
+    index=False
+)
+
+
 
 21.	download the result files
 files.download(
