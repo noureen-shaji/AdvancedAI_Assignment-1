@@ -108,7 +108,9 @@ One-Hot Encoding.
 
 And all the above preprocessing will be in Pipeline.
 
-**Algorithms:**
+---
+## 10. Algorithms
+
 1.	Dummy Classifier
 2.	Logistic Regression
 3.	Decision Tree
@@ -152,7 +154,8 @@ Other parameters were held constant within each model family.
 
 After selection, these settings were **frozen**. Freezing means that the settings were not changed after viewing the final test results and were reused unchanged in the Height/Weight ablation.
 
-**Evaluation Metrics:**
+---
+## 11. Evaluation Metrics
 
 Primary metric: Macro-F1 
 
@@ -176,7 +179,7 @@ Precision and Recall are macro-averaged. AUC is macro one-vs-rest. Macro-F1 is t
 
 ---
 
-## 11. Final Full-Feature Results
+## 12. Final Full-Feature Results
 
 | Model | Macro-F1 | Accuracy | Macro Precision | Macro Recall | Macro OvR AUC | Training time (s) | Model size (MB) |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -198,15 +201,10 @@ The efficiency results show important trade-offs:
 - Gradient Boosting provided the strongest predictive performance but required the longest training time.
 
 
-## 12. Height/Weight Ablation
-
- 
+## 13. Height/Weight Ablation
 
 For the ablation, only `Height` and `Weight` were removed. The following remained unchanged:
 
- 
-
- 
 
 ### Ablation results
 
@@ -228,10 +226,12 @@ For the ablation, only `Height` and `Weight` were removed. The following remaine
 | Decision Tree | −0.2575 | −0.2484 | −0.2528 | −0.2546 | −0.0938 |
 | Dummy Classifier | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
 
-**Limitations:**
+---
+## 14. Limitations
 
 The public dataset includes a substantial synthetic component and should be treated as a machine-learning benchmark rather than a representative clinical population. The task is **cross-sectional obesity-level classification**, not prediction of future obesity and not clinical diagnosis. Only one random seed was used and standard preprocessing was done, without advanced feature extraction, and the feature rankings show model importance rather than direct causal effects.
 
-**Conclusion:** 
+---
+## 15. Conclusion
 
 Gradient Boosting achieved the highest full-feature Macro-F1. Weight and Height were the two most influential features, and removing them reduced performance substantially. However, Gradient Boosting remained the best-performing model after the ablation. The hypothesis was therefore partially supported: Height and Weight were highly influential, but they did not fully explain Gradient Boosting’s advantage. 
