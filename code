@@ -107,3 +107,27 @@ selected_settings_df = pd.DataFrame([
 ])
 
 display(selected_settings_df)
+
+
+
+
+
+17.	run the ablation
+ablation_results_df, ablation_trained_models = evaluate_condition(
+    condition_name="Without Height and Weight",
+    X_development_condition=X_development_no_hw,
+    X_test_condition=X_test_no_hw,
+    frozen_models=FROZEN_MODELS,
+    output_folder="models_without_height_weight"
+)
+
+display(
+    ablation_results_df.round(4)
+)
+
+ablation_results_df.to_csv(
+    "ablation_results_all_metrics.csv",
+    index=False
+)
+
+
