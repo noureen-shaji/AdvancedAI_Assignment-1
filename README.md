@@ -163,17 +163,12 @@ The winner is the model with the highest test of Macro-F1 across the five seeds.
 
 Secondary metrics: 
 
-Accuracy  
-
-Precision  
-
-Recall 
-
-AUC
-
-Training time 
-
-Serializes model size 
+- Accuracy  
+- Precision  
+- Recall 
+- AUC
+- Training time 
+- Serializes model size 
 
 Precision and Recall are macro-averaged. AUC is macro one-vs-rest. Macro-F1 is the primary ranking metric.​
 
