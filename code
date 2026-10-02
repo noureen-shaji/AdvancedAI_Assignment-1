@@ -642,11 +642,6 @@ def evaluate_condition(
     return results_df, trained_models
 
 
-
-
-
-
-
 15.run the final full-feature test
 full_results_df, full_trained_models = evaluate_condition(
     condition_name="Full Features",
