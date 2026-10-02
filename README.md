@@ -48,3 +48,7 @@ Target Classes:
 “Obesity-Type-II" 
 
 “Obesity-Type-III" 
+
+Dataset limitation
+The public dataset includes a substantial synthetic component and should be treated as a machine-learning benchmark rather than a representative clinical population. The task is **cross-sectional obesity-level classification**, not prediction of future obesity and not clinical diagnosis.
+
