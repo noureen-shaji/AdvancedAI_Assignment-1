@@ -1,1 +1,109 @@
 
+
+
+
+
+
+
+
+11.	choose settings using validation Macro-F1
+validation_results = []
+
+selected_estimators = {}
+selected_setting_names = {}
+
+for model_name, candidates in candidate_models.items():
+
+    best_macro_f1 = -1
+    best_estimator = None
+    best_setting_name = None
+
+    for setting_name, estimator in candidates:
+
+        model_pipeline = Pipeline(steps=[
+            (
+                "preprocessor",
+                clone(full_preprocessor)
+            ),
+            (
+                "classifier",
+                clone(estimator)
+            )
+        ])
+
+        model_pipeline.fit(
+            X_train,
+            y_train
+        )
+
+        predictions = model_pipeline.predict(
+            X_val
+        )
+
+        macro_f1 = f1_score(
+            y_val,
+            predictions,
+            average="macro",
+            zero_division=0
+        )
+
+        accuracy = accuracy_score(
+            y_val,
+            predictions
+        )
+
+        precision = precision_score(
+            y_val,
+            predictions,
+            average="macro",
+            zero_division=0
+        )
+
+        recall = recall_score(
+            y_val,
+            predictions,
+            average="macro",
+            zero_division=0
+        )
+
+        validation_results.append({
+            "Model": model_name,
+            "Setting": setting_name,
+            "Macro-F1": macro_f1,
+            "Accuracy": accuracy,
+            "Precision": precision,
+            "Recall": recall
+        })
+
+        if macro_f1 > best_macro_f1:
+            best_macro_f1 = macro_f1
+            best_estimator = clone(estimator)
+            best_setting_name = setting_name
+
+    selected_estimators[model_name] = best_estimator
+    selected_setting_names[model_name] = best_setting_name
+
+
+validation_results_df = pd.DataFrame(
+    validation_results
+)
+
+display(
+    validation_results_df
+    .sort_values(
+        ["Model", "Macro-F1"],
+        ascending=[True, False]
+    )
+    .round(4)
+)
+
+selected_settings_df = pd.DataFrame([
+    {
+        "Model": model_name,
+        "Selected Setting": setting_name
+    }
+    for model_name, setting_name
+    in selected_setting_names.items()
+])
+
+display(selected_settings_df)
