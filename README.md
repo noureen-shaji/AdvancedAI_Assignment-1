@@ -33,3 +33,18 @@ Dataset:
 •	Classes: 7
 •	Known limitation: 77% of the released records are reported as synthetically generated, while 23% were collected through a web platform.
 
+Target Classes: 
+
+“Insufficient Weight” 
+
+“Normal Weight” 
+
+“Overweight-Level-I" 
+
+“Overweight-Level-II" 
+
+“Obesity-Type-I" 
+
+“Obesity-Type-II" 
+
+“Obesity-Type-III" 
