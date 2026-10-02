@@ -67,44 +67,44 @@ To ensure fair comparison, we keep the following unchanged:
 
 Same records, same training, validation and test splits, one random seed, same preprocessing, same algorithms, same model settings, same primary metric, same execution environment, and same test records. 
 
-Complete feature set 
+## Complete feature set 
 
 All 16 input features are used, including Height and Weight. The four models are trained and evaluated using this full dataset. This gives the baseline accuracy for each model. 
 
-Feature-removal ablation 
+## Feature-removal ablation 
 
 The same models are trained again using the same data split and preprocessing, but Height and Weight are removed. The new accuracy is compared with the baseline accuracy to measure how much those two features affected performance. 
 
 ---
 ## 8. Data Splitting: 
 
-70% Training 
+- 70% Training 
 
-15% Validation 
+- 15% Validation 
 
-15% Testing 
+- 15% Testing 
 
 
 ---
 ## 9. Preprocessing
 
-Numerical variables 
+## Numerical variables 
 
 Age, Hight, Weight, FCVC, NCP, CH2O, FAF, TUE 
 
 We will apply:  
 
-Median Imputation
-Standardization 
+1. Median Imputation
+2. Standardization 
 
-Categorical variables 
+## Categorical variables 
 
 Gender, SMOKE, CAEC, CALC, MTRANS 
 
 We will apply: 
 
-Most-Frequent Imputation. 
-One-Hot Encoding. 
+1. Most-Frequent Imputation. 
+2. One-Hot Encoding. 
 
 And all the above preprocessing will be in Pipeline.
 
