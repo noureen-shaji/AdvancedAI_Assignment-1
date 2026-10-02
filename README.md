@@ -75,7 +75,8 @@ Feature-removal ablation
 
 The same models are trained again using the same data split and preprocessing, but Height and Weight are removed. The new accuracy is compared with the baseline accuracy to measure how much those two features affected performance. 
 
-Data Splitting: 
+---
+## 8. Data Splitting: 
 
 70% Training 
 
@@ -84,8 +85,8 @@ Data Splitting:
 15% Testing 
 
 
-
-**Preprocessing:**
+---
+## 9. Preprocessing
 
 Numerical variables 
 
