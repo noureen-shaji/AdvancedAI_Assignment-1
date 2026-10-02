@@ -216,5 +216,52 @@ The efficiency results show important trade-offs:
 - Gradient Boosting provided the strongest predictive performance but required the longest training time.
 
 
+## 12. Height/Weight Ablation
+
+ 
+
+For the ablation, only `Height` and `Weight` were removed. The following remained unchanged:
+
+ 
+
+ 
+
+### Ablation results
+
+ 
+
+| Model | Macro-F1 | Accuracy | Macro Precision | Macro Recall | Macro OvR AUC |
+
+|---|---:|---:|---:|---:|---:|
+
+| **Gradient Boosting** | **0.8562** | **0.8567** | **0.8612** | **0.8547** | 0.9693 |
+
+| Random Forest | 0.8267 | 0.8312 | 0.8266 | 0.8285 | **0.9766** |
+
+| Decision Tree | 0.6758 | 0.6879 | 0.6815 | 0.6794 | 0.8936 |
+
+| Logistic Regression | 0.6123 | 0.6369 | 0.6363 | 0.6278 | 0.8966 |
+
+| Dummy Classifier | 0.0413 | 0.1688 | 0.0241 | 0.1429 | 0.5000 |
+
+ 
+
+### Change in performance
+
+ 
+
+| Model | Δ Macro-F1 | Δ Accuracy | Δ Precision | Δ Recall | Δ AUC |
+
+|---|---:|---:|---:|---:|---:|
+
+| Gradient Boosting | −0.1283 | −0.1274 | −0.1231 | −0.1306 | −0.0301 |
+
+| Logistic Regression | **−0.3240** | **−0.3025** | **−0.3009** | **−0.3085** | −0.0990 |
+
+| Random Forest | −0.1082 | −0.1051 | −0.1126 | −0.1052 | **−0.0175** |
+
+| Decision Tree | −0.2575 | −0.2484 | −0.2528 | −0.2546 | −0.0938 |
+
+| Dummy Classifier | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
 
  
