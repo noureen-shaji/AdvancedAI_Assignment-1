@@ -59,7 +59,7 @@ Experiments:
 
 To ensure fair comparison, we keep the following unchanged:  
 
-Same records, same training, validation and test splits, same random seeds, same preprocessing, same algorithms, same model settings, same primary metric, same execution environment, and same test records. 
+Same records, same training, validation and test splits, one random seed, same preprocessing, same algorithms, same model settings, same primary metric, same execution environment, and same test records. 
 
 Complete feature set 
 
