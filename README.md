@@ -51,6 +51,30 @@ Target Classes:
 
 “Obesity-Type-III" 
 
+Experiments: 
+
+To ensure fair comparison, we keep the following unchanged:  
+
+Same records, same training, validation and test splits, same random seeds, same preprocessing, same algorithms, same model settings, same primary metric, same execution environment, and same test records. 
+
+Complete feature set 
+
+All 16 input features are used, including Height and Weight. The four models are trained and evaluated using this full dataset. This gives the baseline accuracy for each model. 
+
+Feature-removal ablation 
+
+The same models are trained again using the same data split and preprocessing, but Height and Weight are removed. The new accuracy is compared with the baseline accuracy to measure how much those two features affected performance. 
+
+Data Splitting: 
+
+70% Training 
+
+15% Validation 
+
+15% Testing 
+
+
+
 **Preprocessing:**
 
 Numerical variables 
