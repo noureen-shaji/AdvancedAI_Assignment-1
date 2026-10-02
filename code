@@ -660,6 +660,7 @@ full_results_df.to_csv(
     index=False
 )
 
+
 16.remove Height and Weight
 X_development_no_hw = X_development.drop(
     columns=["Height", "Weight"]
@@ -674,6 +675,7 @@ print("Without H/W development:", X_development_no_hw.shape)
 
 print("Full test:", X_test.shape)
 print("Without H/W test:", X_test_no_hw.shape)
+
 
 17.	run the ablation
 ablation_results_df, ablation_trained_models = evaluate_condition(
