@@ -108,10 +108,6 @@ One-Hot Encoding.
 
 And all the above preprocessing will be in Pipeline.
 
-Dataset limitation
-The public dataset includes a substantial synthetic component and should be treated as a machine-learning benchmark rather than a representative clinical population. The task is **cross-sectional obesity-level classification**, not prediction of future obesity and not clinical diagnosis.
-
-
 **Algorithms:**
 1.	Dummy Classifier
 2.	Logistic Regression
@@ -233,6 +229,8 @@ For the ablation, only `Height` and `Weight` were removed. The following remaine
 | Dummy Classifier | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
 
 **Limitations:**
+
+The public dataset includes a substantial synthetic component and should be treated as a machine-learning benchmark rather than a representative clinical population. The task is **cross-sectional obesity-level classification**, not prediction of future obesity and not clinical diagnosis. Only one random seed was used and standard preprocessing was done, without advanced feature extraction, and the feature rankings show model importance rather than direct causal effects.
 
 **Conclusion:** 
 
