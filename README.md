@@ -51,6 +51,26 @@ Target Classes:
 
 “Obesity-Type-III" 
 
+**Preprocessing: **
+
+Numerical variables 
+Age, Hight, Weight, FCVC, NCP, CH2O, FAF, TUE 
+
+We will apply:  
+
+Median Imputation
+Standardization 
+
+Categorical variables 
+Gender, SMOKE, CAEC, CALC, MTRANS 
+
+We will apply: 
+
+Most-Frequent Imputation. 
+One-Hot Encoding. 
+
+And all the above preprocessing will be in Pipeline.
+
 Dataset limitation
 The public dataset includes a substantial synthetic component and should be treated as a machine-learning benchmark rather than a representative clinical population. The task is **cross-sectional obesity-level classification**, not prediction of future obesity and not clinical diagnosis.
 
