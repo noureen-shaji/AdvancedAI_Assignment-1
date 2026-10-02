@@ -2,7 +2,124 @@
 
 
 
+8. check class balance
 
+print("TRAINING CLASSES")
+
+print(y_train.value_counts())
+
+print("\nVALIDATION CLASSES")
+
+print(y_val.value_counts())
+
+print("\nTEST CLASSES")
+
+print(y_test.value_counts())
+
+9. create the preprocessing function
+
+
+def create_preprocessor(dataframe):
+
+
+numeric_columns = dataframe.select_dtypes(
+
+include=["number"]
+
+).columns.tolist()
+
+
+categorical_columns = dataframe.select_dtypes(
+
+include=["object", "category"]
+
+).columns.tolist()
+
+
+numeric_pipeline = Pipeline(steps=[
+
+(
+
+"imputer",
+
+SimpleImputer(strategy="median")
+
+),
+
+(
+
+"scaler",
+
+StandardScaler()
+
+)
+
+])
+
+
+categorical_pipeline = Pipeline(steps=[
+
+(
+
+"imputer",
+
+SimpleImputer(strategy="most_frequent")
+
+),
+
+(
+
+"onehot",
+
+OneHotEncoder(
+
+handle_unknown="ignore",
+
+sparse_output=False
+
+)
+
+)
+
+])
+
+
+preprocessor = ColumnTransformer(
+
+transformers=[
+
+(
+
+"numeric",
+
+numeric_pipeline,
+
+numeric_columns
+
+),
+
+(
+
+"categorical",
+
+categorical_pipeline,
+
+categorical_columns
+
+)
+
+]
+
+)
+
+
+return preprocessor
+
+
+full_preprocessor = create_preprocessor(X_train)
+
+
+print("Preprocessor created.")
 10.define the candidate models
 
 candidate_models = {
