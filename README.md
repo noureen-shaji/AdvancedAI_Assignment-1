@@ -248,20 +248,12 @@ For the ablation, only `Height` and `Weight` were removed. The following remaine
 
 ### Change in performance
 
- 
-
 | Model | Δ Macro-F1 | Δ Accuracy | Δ Precision | Δ Recall | Δ AUC |
-
 |---|---:|---:|---:|---:|---:|
-
 | Gradient Boosting | −0.1283 | −0.1274 | −0.1231 | −0.1306 | −0.0301 |
-
 | Logistic Regression | **−0.3240** | **−0.3025** | **−0.3009** | **−0.3085** | −0.0990 |
-
 | Random Forest | −0.1082 | −0.1051 | −0.1126 | −0.1052 | **−0.0175** |
-
 | Decision Tree | −0.2575 | −0.2484 | −0.2528 | −0.2546 | −0.0938 |
-
 | Dummy Classifier | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
 
  
