@@ -51,9 +51,10 @@ Target Classes:
 
 “Obesity-Type-III" 
 
-**Preprocessing: **
+**Preprocessing:**
 
 Numerical variables 
+
 Age, Hight, Weight, FCVC, NCP, CH2O, FAF, TUE 
 
 We will apply:  
@@ -62,6 +63,7 @@ Median Imputation
 Standardization 
 
 Categorical variables 
+
 Gender, SMOKE, CAEC, CALC, MTRANS 
 
 We will apply: 
