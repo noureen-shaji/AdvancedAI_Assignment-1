@@ -20,7 +20,7 @@ However, obesity categories are strongly related to the Body Mass Index (BMI), w
 
 How do height and weight affect the performance and ranking of ML algorithms for seven-class obesity classification? 
 
-HAI
+
 Dataset:
 •	Dataset: Estimation of Obesity Levels Based on Eating Habits and Physical Condition.
 •	Source: UCI Machine Learning Repository.
