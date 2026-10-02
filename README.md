@@ -192,5 +192,29 @@ Serializes model size
 
 Precision and Recall are macro-averaged. AUC is macro one-vs-rest. Macro-F1 is the primary ranking metric.​
 
+---
+
+## 11. Final Full-Feature Results
+
+| Model | Macro-F1 | Accuracy | Macro Precision | Macro Recall | Macro OvR AUC | Training time (s) | Model size (MB) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **Gradient Boosting** | **0.9845** | **0.9841** | **0.9843** | **0.9853** | **0.9994** | 11.7836 | 2.5465 |
+| Logistic Regression | 0.9363 | 0.9395 | 0.9372 | 0.9363 | 0.9956 | 0.6247 | **0.0079** |
+| Random Forest | 0.9349 | 0.9363 | 0.9393 | 0.9337 | 0.9941 | 2.7265 | 12.8830 |
+| Decision Tree | 0.9334 | 0.9363 | 0.9342 | 0.9340 | 0.9875 | **0.0866** | 0.0228 |
+| Dummy Classifier | 0.0413 | 0.1688 | 0.0241 | 0.1429 | 0.5000 | 0.0239 | 0.0060 |
+
+### Main result
+
+Gradient Boosting ranked first according to the predefined primary metric, achieving a test Macro-F1 of 0.9845. It also achieved the highest Accuracy, macro Precision, macro Recall, and macro one-vs-rest AUC.
+
+The efficiency results show important trade-offs:
+
+- Decision Tree trained fastest among the learned models.
+- Logistic Regression produced the smallest learned model.
+- Random Forest produced the largest serialized model.
+- Gradient Boosting provided the strongest predictive performance but required the longest training time.
+
+
 
  
