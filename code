@@ -471,6 +471,34 @@ selected_settings_df = pd.DataFrame([
 
 display(selected_settings_df)
 
+
+12.	Freeze the settings
+FROZEN_MODELS = {
+    model_name: clone(estimator)
+    for model_name, estimator
+    in selected_estimators.items()
+}
+
+print("Model settings are now frozen.")
+
+for model_name, setting_name in selected_setting_names.items():
+    print(model_name, "→", setting_name)
+
+13.	combine training and validation
+X_development = pd.concat(
+    [X_train, X_val],
+    axis=0
+)
+
+y_development = pd.concat(
+    [y_train, y_val],
+    axis=0
+)
+
+print("Development:", X_development.shape)
+print("Final test:", X_test.shape)
+
+
 14.	create the evaluation function
 def evaluate_condition(
     condition_name,
