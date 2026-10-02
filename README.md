@@ -23,11 +23,12 @@ However, obesity categories are strongly related to the Body Mass Index (BMI), w
 ## 3. Research Question
 
 How do height and weight affect the performance and ranking of ML algorithms for seven-class obesity classification? 
-**Hypothesis**
+---
+## 4. Hypothesis
 Removing height and weight is expected to reduce model performance because these variables closely encode BMI-based obesity classes. Tree-based ensemble models may lose more performance than Logistic Regression if their advantage depends on nonlinear relationships between height and weight.
 
-
-Dataset:
+---
+## 5. Dataset:
 •	Dataset: Estimation of Obesity Levels Based on Eating Habits and Physical Condition.
 •	Source: UCI Machine Learning Repository.
 •	UCI ID: 544
