@@ -814,7 +814,7 @@ comparison_df.to_csv(
 
 
 
-21.	download the result files
+19.	download the result files
 files.download(
     "full_results_all_metrics.csv"
 )
