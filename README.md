@@ -126,44 +126,24 @@ Hyperparameters were selected using Validation Macro-F1. The final test set was 
 
 ### Candidate settings
 
- 
-
 | Model | Candidate settings |
-
 |---|---|
-
 | Dummy Classifier | `strategy="most_frequent"` |
-
 | Logistic Regression | `C ∈ {0.1, 1, 10}` |
-
 | Decision Tree | `max_depth ∈ {5, 10, None}` |
-
 | Random Forest | `n_estimators ∈ {100, 300, 500}` |
-
 | Gradient Boosting | `n_estimators ∈ {100, 300, 500}` |
-
- 
 
 Other parameters were held constant within each model family.
 
- 
-
 ### Selected settings
 
- 
-
 | Model | Selected setting | Validation Macro-F1 |
-
 |---|---|---:|
-
 | Dummy Classifier | Most frequent | 0.0414 |
-
 | Logistic Regression | `C = 10` | 0.9428 |
-
 | Decision Tree | `max_depth = 10` | 0.9306 |
-
 | Random Forest | `n_estimators = 300` | 0.9191 |
-
 | Gradient Boosting | `n_estimators = 300` | 0.9531 |
 
  
