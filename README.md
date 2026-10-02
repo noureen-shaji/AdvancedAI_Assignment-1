@@ -225,3 +225,9 @@ For the ablation, only `Height` and `Weight` were removed. The following remaine
 | Random Forest | −0.1082 | −0.1051 | −0.1126 | −0.1052 | **−0.0175** |
 | Decision Tree | −0.2575 | −0.2484 | −0.2528 | −0.2546 | −0.0938 |
 | Dummy Classifier | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+
+**Limitations:**
+
+**Conclusion:** 
+
+Gradient Boosting achieved the highest full-feature Macro-F1. Weight and Height were the two most influential features, and removing them reduced performance substantially. However, Gradient Boosting remained the best-performing model after the ablation. The hypothesis was therefore partially supported: Height and Weight were highly influential, but they did not fully explain Gradient Boosting’s advantage. 
