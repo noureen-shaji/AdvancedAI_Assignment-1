@@ -170,3 +170,27 @@ Other parameters were held constant within each model family.
 
 After selection, these settings were **frozen**. Freezing means that the settings were not changed after viewing the final test results and were reused unchanged in the Height/Weight ablation.
 
+**Evaluation Metrics:**
+
+Primary metric: Macro-F1 
+
+The winner is the model with the highest test of Macro-F1 across the five seeds. 
+
+Secondary metrics: 
+
+Accuracy  
+
+Precision  
+
+Recall 
+
+AUC
+
+Training time 
+
+Serializes model size 
+
+Precision and Recall are macro-averaged. AUC is macro one-vs-rest. Macro-F1 is the primary ranking metric.​
+
+
+ 
