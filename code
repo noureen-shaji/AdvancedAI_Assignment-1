@@ -1,3 +1,128 @@
+1.1.	import the tools
+import os
+import time
+import joblib
+import pandas as pd
+import matplotlib.pyplot as plt
+
+from google.colab import files
+from sklearn.base import clone
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.impute import SimpleImputer
+from sklearn.model_selection import train_test_split
+
+from sklearn.dummy import DummyClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import (
+    RandomForestClassifier,
+    GradientBoostingClassifier
+)
+
+from sklearn.metrics import (
+    accuracy_score,
+    precision_score,
+    recall_score,
+    f1_score,
+    roc_auc_score,
+    matthews_corrcoef,
+    classification_report,
+    confusion_matrix,
+    ConfusionMatrixDisplay
+)
+
+from sklearn.inspection import permutation_importance
+
+print("Libraries loaded successfully.")
+
+2.	upload the CSV
+
+uploaded = files.upload()
+
+//choose ObesityDataSet_raw_and_data_sinthetic.csv
+
+csv_filename = next(
+    name for name in uploaded
+    if name.lower().endswith(".csv")
+)
+
+print("Uploaded file:", csv_filename)
+
+3.	load the CSV
+
+df = pd.read_csv(csv_filename)
+
+print("Dataset loaded.")
+print("Shape:", df.shape)
+
+display(df.head())
+
+4.	inspect the dataset
+
+print("Column names:")
+print(df.columns.tolist())
+
+print("\nMissing values:")
+print(df.isnull().sum())
+
+print("\nExact duplicate rows:")
+print(df.duplicated().sum())
+
+print("\nTarget classes:")
+print(df["NObeyesdad"].value_counts())
+
+
+5.	remove exact duplicates
+original_rows = len(df)
+duplicate_count = int(df.duplicated().sum())
+
+df = df.drop_duplicates().reset_index(drop=True)
+
+cleaned_rows = len(df)
+
+print("Original rows:", original_rows)
+print("Duplicates removed:", duplicate_count)
+print("Cleaned rows:", cleaned_rows)
+
+6.	Separate
+
+X = df.drop(columns=["NObeyesdad"])
+y = df["NObeyesdad"]
+
+print("X shape:", X.shape)
+print("y shape:", y.shape)
+
+7.	Split the data
+RANDOM_SEED = 42
+X_train, X_temp, y_train, y_temp = train_test_split(
+    X,
+    y,
+    test_size=0.30,
+    random_state=RANDOM_SEED,
+    stratify=y
+)
+
+X_val, X_test, y_val, y_test = train_test_split(
+    X_temp,
+    y_temp,
+    test_size=0.50,
+    random_state=RANDOM_SEED,
+    stratify=y_temp
+)
+print("Training:", X_train.shape, y_train.shape)
+print("Validation:", X_val.shape, y_val.shape)
+print("Test:", X_test.shape, y_test.shape)
+
+
+
+
+
+
+
+
+
 
 
 
