@@ -669,3 +669,15 @@ ablation_results_df.to_csv(
 )
 
 
+21.	download the result files
+files.download(
+    "full_results_all_metrics.csv"
+)
+
+files.download(
+    "ablation_results_all_metrics.csv"
+)
+
+files.download(
+    "comparison_all_metrics.csv"
+)
