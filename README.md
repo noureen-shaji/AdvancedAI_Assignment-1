@@ -2,7 +2,7 @@
 
 Evaluating anthropometric shortcut learning in multiclass obesity classification. Assessing the Influence of Height and Weight on Machine Learning Based Obesity Classification. An Ablation Study of Height and Weight in Machine Learning Based Obesity Classification 
 
-**Summary**
+## 1. Project Overview
 
 This project compares several machine learning algorithms for classifying obesity levels into seven categories. The objective is not only to determine which models will obtain the highest performance, but also to investigate whether strong performance depends on information that is closely related to the definition of the target label. 
 
