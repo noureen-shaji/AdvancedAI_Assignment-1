@@ -32,33 +32,52 @@ Removing height and weight is expected to reduce model performance because these
 ---
 ## 5. Dataset
 
-•	Dataset: Estimation of Obesity Levels Based on Eating Habits and Physical Condition.
-•	Source: UCI Machine Learning Repository.
-•	UCI ID: 544
-•	DOI: 10.24432/C5H31Z
-•	License: CC BY 4.0
-•	Original records: 2,111
-•	Predictors: 16
-•	Target: "NObeyesdad"
-•	Classes: 7
-•	Known limitation: 77% of the released records are reported as synthetically generated, while 23% were collected through a web platform.
+**Name:** Estimation of Obesity Levels Based on Eating Habits and Physical Condition  
+**Repository:** UCI Machine Learning Repository  
+**Dataset ID:** 544  
+**DOI:** [10.24432/C5H31Z](https://doi.org/10.24432/C5H31Z)  
+**Licence:** CC BY 4.0  
+**Download date:** `24/9/2026`  
+**Raw file:** `ObesityDataSet_raw_and_data_sinthetic.csv`
+
+### Dataset properties
+
+| Property | Value |
+|---|---:|
+| Original records | 2,111 |
+| Exact duplicate records removed | 24 |
+| Cleaned records | 2,087 |
+| Predictors | 16 |
+| Target column | `NObeyesdad` |
+| Target classes | 7 |
+| Missing values found | 0 |
+| Learning type | Supervised multiclass classification |
+
+
 
 ---
 ## 6. Target Classes
 
 “Insufficient Weight” 
-
 “Normal Weight” 
-
 “Overweight-Level-I" 
-
 “Overweight-Level-II" 
-
 “Obesity-Type-I" 
-
 “Obesity-Type-II" 
-
 “Obesity-Type-III" 
+
+### Target classes after duplicate removal
+
+| Class | Records |
+|---|---:|
+| Obesity Type I | 351 |
+| Obesity Type III | 324 |
+| Obesity Type II | 297 |
+| Overweight Level II | 290 |
+| Normal Weight | 282 |
+| Overweight Level I | 276 |
+| Insufficient Weight | 267 |
+| **Total** | **2,087** |
 
 ---
 ## 7. Experiments
