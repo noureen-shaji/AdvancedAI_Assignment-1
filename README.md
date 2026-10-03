@@ -269,7 +269,7 @@ Gradient Boosting achieved the highest full-feature Macro-F1. Weight and Height 
 
 ## 18. Group Members and Contributions
 
-All four members have participated in:
+All four team members participated in:
 - reviewing the final experiment design;
 - checking that the code runs from the beginning;
 - verifying that no result was copied from a paper or leaderboard;
