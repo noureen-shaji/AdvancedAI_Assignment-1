@@ -269,6 +269,13 @@ Gradient Boosting achieved the highest full-feature Macro-F1. Weight and Height 
 
 ## 18. Group Members and Contributions
 
+| Member | Student ID | 
+|---|---|
+| **Noureen Shaji** | `700053294` | 
+| **Nuha AlMasalmeh** | `201670003` | 
+| **Akhila Asgar** | `700038141` | 
+| **Rhea Mary Josi** | `700053545` | 
+
 All four team members participated in:
 - reviewing the final experiment design;
 - checking that the code runs from the beginning;
